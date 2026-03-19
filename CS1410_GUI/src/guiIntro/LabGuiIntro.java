@@ -72,6 +72,11 @@ public class LabGuiIntro extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(81, 81, 81));
 		{
+			JLabel lblNewLabel_1 = new JLabel("Name:");
+			lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+			panel.add(lblNewLabel_1);
+		}
+		{
 			txtName = new JTextField();
 			txtName.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 			panel.add(txtName);
