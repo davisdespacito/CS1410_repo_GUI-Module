@@ -56,16 +56,24 @@ public class LabGuiIntro extends JFrame {
 			contentPane.add(panel, BorderLayout.SOUTH);
 		}
 		{
-			JLabel lblNewLabel = new JLabel("Hi");
-			lblNewLabel.setOpaque(true);
-			lblNewLabel.setFont(new Font("Oriya MN", Font.PLAIN, 77));
-			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel.setForeground(new Color(255, 146, 0));
-			lblNewLabel.setBackground(new Color(255, 38, 0));
+			JLabel lblNewLabel = newLblHi();
 			contentPane.add(lblNewLabel, BorderLayout.CENTER);
 		}
 		
 
+	}
+
+	/**
+	 * @return
+	 */
+	private JLabel newLblHi() {
+		JLabel lblNewLabel = new JLabel("Hi");
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setFont(new Font("Oriya MN", Font.PLAIN, 77));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(255, 146, 0));
+		lblNewLabel.setBackground(new Color(255, 38, 0));
+		return lblNewLabel;
 	}
 
 	private JPanel newTextPanel() {
