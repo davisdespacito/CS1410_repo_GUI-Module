@@ -56,6 +56,11 @@ public class MyFirstButton extends JFrame {
 		JButton btnMyFirstButton = new JButton("My First Button");
 		btnMyFirstButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (btnMyFirstButton.getBackground().equals(Color.GREEN)) {
+					btnMyFirstButton.setBackground(Color.YELLOW);
+				}
+				else
+					btnMyFirstButton.setBackground(Color.GREEN);
 			}
 		});
 		btnMyFirstButton.setOpaque(true);
