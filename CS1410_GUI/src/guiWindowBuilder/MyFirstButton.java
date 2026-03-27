@@ -11,14 +11,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 public class MyFirstButton extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JLabel lblToggle;
 
 	/**
-	 * Launch the application.
+	 * Demo how to create an event handler for a button.
+	 * 
+	 * @author davisP
+	 * 
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -43,10 +48,24 @@ public class MyFirstButton extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
 		JButton btnMyFirstButton = newBtnMyFirstButton();
 		contentPane.add(btnMyFirstButton, BorderLayout.CENTER);
 
+		lblToggle = createLabelToggle();
+		contentPane.add(lblToggle, BorderLayout.WEST);
+
+	}
+
+	/**
+	 * @return
+	 */
+	private JLabel createLabelToggle() {
+		JLabel lblToggle = new JLabel("Toggle");
+		lblToggle.setOpaque(true);
+		lblToggle.setBackground(new Color(255, 146, 0));
+		lblToggle.setBorder(new EmptyBorder(0, 15, 0, 15));
+		return lblToggle;
 	}
 
 	/**
@@ -58,8 +77,7 @@ public class MyFirstButton extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btnMyFirstButton.getBackground().equals(Color.GREEN)) {
 					btnMyFirstButton.setBackground(Color.YELLOW);
-				}
-				else
+				} else
 					btnMyFirstButton.setBackground(Color.GREEN);
 			}
 		});
