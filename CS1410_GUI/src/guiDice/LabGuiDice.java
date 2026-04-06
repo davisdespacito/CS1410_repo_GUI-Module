@@ -22,13 +22,25 @@ public class LabGuiDice extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	final static File dir = new File("src/Resources");
 	static int imagesSize = 6;
-	static String[] imagesArray = new String[imagesSize];
+	public static final String[] imagesArray = new String[imagesSize];
 
-	private static File[] images = dir.listFiles();
-	private Random rand = new Random();
-	public File diceImage = images[rand.nextInt(images.length)];
+	private static File[] images = new File("src/Resources").listFiles();
+
+	Random rand = new Random();
+	File dieImage = images[rand.nextInt(images.length)];
+
+	public void randomDieNumber() {
+
+		
+		
+		File newDieImage = images[rand.nextInt(images.length)];
+		lblImage.setIcon(new ImageIcon(newDieImage.getAbsolutePath()));
+
+	}
+
+	private JButton btnRollEm;
+	private JLabel lblImage;
 
 	/**
 	 * Launch the application.
@@ -70,9 +82,9 @@ public class LabGuiDice extends JFrame {
 	 * @return
 	 */
 	private JLabel newLblImage() {
-		JLabel lblImage = new JLabel("");
+		lblImage = new JLabel("");
 		lblImage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblImage.setIcon(new ImageIcon(diceImage.getAbsolutePath()));
+		lblImage.setIcon(new ImageIcon(dieImage.getAbsolutePath()));
 		return lblImage;
 	}
 
@@ -80,13 +92,13 @@ public class LabGuiDice extends JFrame {
 	 * @return
 	 */
 	private JButton newBtnRollEm() {
-				JButton btnRollEm = new JButton("Roll 'Em");
+		btnRollEm = new JButton("Roll 'Em");
 		btnRollEm.setForeground(new Color(255, 64, 255));
 		btnRollEm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				
-				
+				randomDieNumber();
+
 			}
 		});
 		btnRollEm.setFont(new Font("Bangla MN", Font.ITALIC, 17));
